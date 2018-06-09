@@ -1,21 +1,17 @@
 var express = require('express');
 var router = express.Router();
 var dbcon = require('../database/data_config');
-var bcyrpt = require('bcrypt');
 
 router.post('/', function (req, res) {
 
     var today = new Date();
-    var salt = bcyrpt.genSaltSync(10);
-    var hash = bcyrpt.hashSync(req.body.password, salt);
-    console.log(hash);
 
     var student = {
         "name": req.body.name,
         "school": req.body.school,
         "class": req.body.class,
         "mobile": req.body.mobile,
-        "password": hash,
+        "password": req.body.password,
         "created_at": today,
         "updated_at": today
     };
