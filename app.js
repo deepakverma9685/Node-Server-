@@ -14,6 +14,9 @@ var register = require('./routes/register');
 
 var app = express();
 
+
+
+
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'ejs');
