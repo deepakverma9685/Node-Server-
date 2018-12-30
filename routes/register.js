@@ -6,6 +6,7 @@ router.post('/', function (req, res) {
 
     var today = new Date();
 
+
     var student = {
         "name": req.body.name,
         "school": req.body.school,
